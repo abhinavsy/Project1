@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+        HOME
+{% endblock %}
+{% block content %}
+
+<br>
+<br>
+<br>
+<div class="container">
+<div class="content">
+    <p>To Read Book/Buy Books <a class="btn btn-primary" href="{% url 'user:login' %}" role="button">READ BOOKS</a></p>
+
+</div>
+    <div class="container">
+        <h3>WHY READING IS IMPORTANT?</h3>
+        <p>Reading is good for you because it improves your focus, memory, empathy, and communication skills. It can reduce stress, improve your mental health, and help you live longer. Reading also allows you to learn new things to help you succeed in your work and relationships.</p>
+    </div>
+
+</div>
+  {% for message in messages %}
+    {% if 'success' in message.tags %}
+    <div class="success-message">{{ message }}</div>
+    {% endif %}
+{% endfor %}
+{% endblock %}
